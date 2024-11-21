@@ -1,22 +1,22 @@
 package dev.flur;
 
-import dev.flur.practicum2.Zwembad;
+import dev.flur.practicum2.Voetbalclub;
 
 public class Main {
     public static void main(String[] args) {
-        Zwembad z1 = new Zwembad(2.0, 5.5, 1.5);
-        System.out.println("BREEDTE: " + z1.getBreedte());
-        System.out.println("LENGTE: " + z1.getLengte());
-        System.out.println("DIEPTE: " + z1.getDiepte());
-        System.out.println("BEREKENDE INHOUD: " + z1.inhoud());
+        Voetbalclub ajx = new Voetbalclub("Ajax      ");
+        Voetbalclub feij = new Voetbalclub("Feijenoord");
+
+        feij.verwerkResultaat('w');
+        feij.verwerkResultaat('w');
+        feij.verwerkResultaat('w');
+        feij.verwerkResultaat('g');
+
+        System.out.println("Feijenoord punten: " + feij.aantalPunten());
+        System.out.println("Ajax gespeeld: " + ajx.aantalGespeeld());
         System.out.println();
 
-        Zwembad z2 = new Zwembad( );
-        z2.setBreedte(2.5);
-        z2.setLengte(100.0);
-        z2.setDiepte(2.0);
-        double inh = z2.inhoud();
-        System.out.println("GEGEVENS ZWEMBAD: "+z2.toString());
-        System.out.println("BEREKENDE INHOUD: " + z2.inhoud());
+        System.out.println(ajx);
+        System.out.println(feij);
     }
 }
