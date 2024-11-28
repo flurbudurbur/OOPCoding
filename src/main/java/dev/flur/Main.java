@@ -1,22 +1,22 @@
 package dev.flur;
 
-import dev.flur.practicum2.Voetbalclub;
+import dev.flur.practicum4.Huis;
+import dev.flur.practicum4.Persoon;
 
 public class Main {
     public static void main(String[] args) {
-        Voetbalclub ajx = new Voetbalclub("Ajax      ");
-        Voetbalclub feij = new Voetbalclub("Feijenoord");
-
-        feij.verwerkResultaat('w');
-        feij.verwerkResultaat('w');
-        feij.verwerkResultaat('w');
-        feij.verwerkResultaat('g');
-
-        System.out.println("Feijenoord punten: " + feij.aantalPunten());
-        System.out.println("Ajax gespeeld: " + ajx.aantalGespeeld());
+        Huis h1 = new Huis("Nijenoord 1", 1970);
+        Persoon p1 = new Persoon("Ronald Plasterk", 52);
+        h1.setHuisbaas(p1);
+        System.out.println(h1);
         System.out.println();
 
-        System.out.println(ajx);
-        System.out.println(feij);
+        Huis h2 = new Huis("Vredenburg", 1991);
+        Persoon p2 = new Persoon("Annie Brouwers", 59);
+        h2.setHuisbaas(p2);
+        System.out.println(h2);
+        System.out.println();
+        System.out.println("Huisbaas 1: " + h1.getHuisbaas());
+        System.out.println("Huisbaas 2: " + h2.getHuisbaas());
     }
 }
