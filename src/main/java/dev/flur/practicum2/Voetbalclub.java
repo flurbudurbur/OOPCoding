@@ -8,11 +8,12 @@ public class Voetbalclub {
     private int score;
 
     public Voetbalclub(String naam) {
-        this.naam = naam;
+        naam = (naam != null) ? naam.trim() : "";
+        this.naam = (naam.isEmpty()) ? "FC" : naam;
     }
 
     public Voetbalclub() {
-        this.naam = "FC";
+        this("FC");
     }
 
     public void verwerkResultaat(char rslt) {
