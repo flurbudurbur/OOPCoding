@@ -2,13 +2,17 @@ package dev.flur.practicum2;
 
 public class Voetbalclub {
     private String naam;
-    private int aantalGewonnen = 0;
-    private int aantalGelijk = 0;
-    private int aantalVerloren = 0;
-    private int score = 0;
+    private int aantalGewonnen;
+    private int aantalGelijk;
+    private int aantalVerloren;
+    private int score;
 
     public Voetbalclub(String naam) {
         this.naam = naam;
+    }
+
+    public Voetbalclub() {
+        this.naam = "FC";
     }
 
     public void verwerkResultaat(char rslt) {
@@ -25,6 +29,22 @@ public class Voetbalclub {
                 this.score++;
                 break;
         }
+    }
+
+    public int getAantalVerloren() {
+        return aantalVerloren;
+    }
+
+    public int getAantalGelijk() {
+        return aantalGelijk;
+    }
+
+    public int getAantalGewonnen() {
+        return aantalGewonnen;
+    }
+
+    public String getNaam() {
+        return this.naam;
     }
 
     public int aantalPunten() {
