@@ -1,32 +1,28 @@
 package dev.flur;
 
-import dev.flur.practicum4.Auto;
-import dev.flur.practicum4.AutoHuur;
-import dev.flur.practicum4.Klant;
+import dev.flur.practicum6.Game;
+import dev.flur.practicum6.Persoon;
+
+import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
-        AutoHuur ah1 = new AutoHuur();
-        System.out.println("Eerste autohuur:\n" + ah1 + "\n");
+        int releaseJaar1 = LocalDate.now().getYear() - 1; // 1 jaar geleden
 
-        Klant k = new Klant("Mijnheer de Vries");
-        k.setKorting(10.0);
-        ah1.setHuurder(k);
-        System.out.println("Eerste autohuur:\n" + ah1 + "\n");
+        Game g1 = new Game("Just Cause 3", releaseJaar1, 49.98);
+        Game g2 = new Game("Need for Speed: Rivals", releaseJaar1, 45.99);
+        Game g3 = new Game("Need for Speed: Rivals", releaseJaar1, 45.99);
 
-        Auto a1 = new Auto("Peugeot 207", 50);
-        ah1.setGehuurdeAuto(a1);
-        ah1.setAantalDagen(4);
-        System.out.println("Eerste autohuur:\n" + ah1 + "\n");
+        Persoon p1 = new Persoon("Eric", 200);
+        Persoon p2 = new Persoon("Hans", 55);
 
-        AutoHuur ah2 = new AutoHuur();
-        Auto a2 = new Auto("Ferrari", 3500);
-        ah2.setGehuurdeAuto(a2);
-        ah2.setHuurder(k);
-        ah2.setAantalDagen(1);
-        System.out.println("Tweede autohuur:\n" + ah2 + "\n");
+        System.out.println("p1 koopt g1:" + (p1.koop(g1) ? "" : " niet") + " gelukt");
+        System.out.println("p1 koopt g2:" + (p1.koop(g2) ? "" : " niet") + " gelukt");
+        System.out.println("p1 koopt g3:" + (p1.koop(g3) ? "" : " niet") + " gelukt");
+        System.out.println("\np1: " +p1+ "\n\np2: " +p2+ "\n");
 
-        System.out.println("Gehuurd: " + ah1.getGehuurdeAuto());
-        System.out.println("Gehuurd: " + ah2.getGehuurdeAuto());
+        System.out.println("p1 verkoopt g2 aan p2:"+(p1.verkoop(g2, p2) ? "" : " niet")+" gelukt");
+        System.out.println("p1 verkoopt g1 aan p2:"+(p1.verkoop(g1, p2) ? "" : " niet")+" gelukt");
+        System.out.println("\np1: " +p1+ "\n\np2: " +p2+ "\n");
     }
 }
