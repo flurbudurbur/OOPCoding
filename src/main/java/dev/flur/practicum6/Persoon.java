@@ -36,6 +36,13 @@ public class Persoon {
         return true;
     }
 
+    public Game zoekGameOpNaam(String gameNaam) {
+        for (Game g : mijnGames) {
+            if (g.getNaam().equals(gameNaam)) return g;
+        }
+        return null;
+    }
+
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(naam)
