@@ -29,11 +29,11 @@ public class Game {
 
     @Override
     public boolean equals(Object andereGame) {
-        if (this == andereGame) return true;
-        if (andereGame == null || getClass() != andereGame.getClass()) return false;
-        Game game = (Game) andereGame;
-        return this.naam.equals(game.naam)
-                && this.releaseJaar == game.releaseJaar;
+        if (andereGame instanceof Game game && andereGame != null) {
+            return this.naam.equals(game.naam)
+                    && this.releaseJaar == game.releaseJaar;
+        }
+        return false;
     }
 
 
